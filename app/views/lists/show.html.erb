@@ -1,0 +1,13 @@
+<h2><%= @list.name %></h2>
+<%= link_to 'Back to Watchlist list', lists_path %>
+
+<%@list.bookmarks.each do |bookmark| %>
+  <div class=“card-product”>
+    <div class=“card-product-infos”>
+      <h2><%= bookmark.movie.title %></h2>
+      <p><%=bookmark.comment %></p>
+    </div>
+  </div>
+<%end %>
+<br>
+<%= link_to 'Add new Movie', new_list_bookmark_path(@list.id) %>

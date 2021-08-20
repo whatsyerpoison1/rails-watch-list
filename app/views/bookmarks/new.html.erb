@@ -1,0 +1,18 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item active" aria-current="page">
+      <%= link_to 'Home', lists_path %>
+    </li>
+
+    <li class="breadcrumb-item active" aria-current="page">
+      <%= link_to @list.name, list_path(@list.id) %>
+    </li>
+  </ol>
+</nav>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+<% end %>
